@@ -1,0 +1,22 @@
+# Experiment config: zinc
+# Full training run matching paper hyperparameters
+
+defaults:
+  - /config
+  - _self_
+
+task: zinc
+
+model:
+  _target_: siggate_gt.models.SigGateGT
+
+
+data:
+  _target_: null
+
+# Override training for this benchmark
+training:
+  epochs: 2000
+  optimizer:
+    lr: 1.0e-3
+    weight_decay: 1.0e-5

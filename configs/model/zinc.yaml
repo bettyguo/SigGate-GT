@@ -1,0 +1,13 @@
+# Model configuration for ZINC benchmark
+# 10 layers, dim 64, 8 heads - targets 500K parameter budget
+
+# @package model
+hidden_dim: 64
+num_layers: 10
+num_heads: 8
+ffn_multiplier: 2             # FFN hidden = ffn_multiplier * hidden_dim
+dropout: 0.0
+attn_dropout: 0.0
+gate_bias_init: 0.5           # Gate starts at σ(0.5) ≈ 0.62
+readout: "mean"
+out_dim: 1

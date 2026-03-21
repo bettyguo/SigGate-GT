@@ -1,0 +1,21 @@
+# Debug training config for fast iteration
+# Uses a tiny model and only a few epochs
+# @package training
+
+epochs: 5
+eval_every_n_epochs: 1
+save_every_n_epochs: 5
+max_checkpoints: 1
+max_grad_norm: 1.0
+resume: null
+
+optimizer:
+  name: adamw
+  lr: 1.0e-3
+  weight_decay: 1.0e-5
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+
+scheduler:
+  name: cosine
+  eta_min: 1.0e-6

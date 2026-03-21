@@ -1,0 +1,9 @@
+# Data configuration for LRGB Peptides-struct
+# @package data
+root: "dataset"
+pe_dim: 32
+lappe_dim: 16
+rwse_steps: 16
+batch_size_train: 64
+batch_size_eval: 64
+num_workers: 4

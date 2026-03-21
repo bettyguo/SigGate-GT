@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# PyTorch / ML
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+!checkpoints/.gitignore
+
+# Hydra outputs
+outputs/
+multirun/
+!outputs/.gitignore
+
+# Data (downloaded on-the-fly)
+dataset/
+data/raw/
+data/processed/
+
+# Experiment tracking
+wandb/
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# Type checking
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Documentation
+site/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Environment
+.env
+.env.local
+*.env
+
+# Misc
+*.log
+*.tmp
+*.temp

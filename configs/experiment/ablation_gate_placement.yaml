@@ -1,0 +1,26 @@
+# Ablation study configuration for gate placement
+# Tests G1 (output), G2 (value), G3 (pre-softmax), and no-gate variants
+
+defaults:
+  - /config
+  - _self_
+
+task: zinc
+
+# Gate placement variants (set gate_placement in sweep)
+# G1: output gating (default, best)  -> gate after softmax(QK^T/sqrt(d))V
+# G2: value gating                   -> softmax(QK^T/sqrt(d)) * (gate ⊙ V)
+# G3: pre-softmax logit gating       -> softmax(gate ⊙ QK^T/sqrt(d)) V
+# None: no gating (GraphGPS baseline)
+
+model:
+  gate_bias_init: 0.5
+
+training:
+  epochs: 2000
+  optimizer:
+    lr: 1.0e-3
+    weight_decay: 1.0e-5
+
+# Run with: python train.py --config-name=experiment/ablation_gate_placement
+# and sweep over model.gate_placement in {G1, G2, G3, None}

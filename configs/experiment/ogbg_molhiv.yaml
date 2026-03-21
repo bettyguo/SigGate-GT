@@ -1,0 +1,22 @@
+# Experiment config: ogbg_molhiv
+# Full training run matching paper hyperparameters
+
+defaults:
+  - /config
+  - _self_
+
+task: molhiv
+
+model:
+  _target_: siggate_gt.models.SigGateGT
+  out_dim: 1
+
+data:
+  _target_: null
+
+# Override training for this benchmark
+training:
+  epochs: 100
+  optimizer:
+    lr: 1.0e-4
+    weight_decay: 1.0e-5

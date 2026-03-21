@@ -1,0 +1,22 @@
+# Experiment config: ogbg_molpcba
+# Full training run matching paper hyperparameters
+
+defaults:
+  - /config
+  - _self_
+
+task: molpcba
+
+model:
+  _target_: siggate_gt.models.SigGateGT
+  out_dim: 128
+
+data:
+  _target_: null
+
+# Override training for this benchmark
+training:
+  epochs: 100
+  optimizer:
+    lr: 1.0e-4
+    weight_decay: 1.0e-5

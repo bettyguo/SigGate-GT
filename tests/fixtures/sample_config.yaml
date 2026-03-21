@@ -1,0 +1,32 @@
+# Sample config for tests
+task: zinc
+seed: 42
+deterministic: true
+
+model:
+  hidden_dim: 16
+  num_layers: 2
+  num_heads: 2
+  ffn_multiplier: 2
+  dropout: 0.0
+  attn_dropout: 0.0
+  gate_bias_init: 0.5
+  readout: mean
+  out_dim: 1
+
+training:
+  epochs: 2
+  eval_every_n_epochs: 1
+  save_every_n_epochs: 2
+  max_grad_norm: 1.0
+  optimizer:
+    lr: 1.0e-3
+    weight_decay: 1.0e-5
+    betas: [0.9, 0.999]
+    eps: 1.0e-8
+  scheduler:
+    name: cosine
+    eta_min: 1.0e-6
+
+wandb:
+  enabled: false

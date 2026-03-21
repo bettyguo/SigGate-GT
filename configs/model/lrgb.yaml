@@ -1,0 +1,14 @@
+# Model configuration for LRGB Peptides benchmarks
+# (Peptides-func, Peptides-struct)
+# 10 layers, dim 128, 8 heads
+
+# @package model
+hidden_dim: 128
+num_layers: 10
+num_heads: 8
+ffn_multiplier: 2
+dropout: 0.0
+attn_dropout: 0.0
+gate_bias_init: 0.5
+readout: "mean"
+# out_dim set per-task (10 for func, 11 for struct)
