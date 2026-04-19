@@ -26,7 +26,6 @@
 - [Training](#️-training)
 - [Results](#-results)
 - [Ablation Studies](#-ablation-studies)
-- [Reproducibility](#-reproducibility)
 
 ---
 
@@ -279,39 +278,3 @@ SigGate-GT retains 68% of initial MAD at 16 layers vs. 41% for GraphGPS.
 
 SigGate-GT has a **7× smaller performance range** across the 10× learning rate sweep.
 
----
-
-## ♻️ Reproducibility
-
-All experiments use:
-- **5 seeds**: 0, 1, 2, 3, 4
-- **Hardware**: Single NVIDIA A100 GPU
-- **Framework**: PyTorch 2.1.0, PyG 2.4.0
-- **Positional encodings**: LapPE (16 dims, SignNet) + RWSE (16 steps)
-
-### Compute Budget
-
-| Benchmark | Time/Run | × 5 Seeds |
-|-----------|----------|-----------|
-| ZINC | ~3h | ~15h |
-| ogbg-molhiv | ~2h | ~10h |
-| ogbg-molpcba | ~8h | ~40h |
-| Peptides-func | ~2h | ~10h |
-| Peptides-struct | ~2h | ~10h |
-
-**Total: ~85 A100 GPU-hours** across all benchmarks and seeds.
-
-### Run Reproducibility Tests
-
-```bash
-make test-reproducibility
-```
-
----
-
-<div align="center">
-
-**[Report Bug](https://anonymous.4open.science/r/SigGate-GT/issues)** •
-**[Anonymous Repository](https://anonymous.4open.science/r/SigGate-GT)**
-
-</div>
